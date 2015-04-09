@@ -1,8 +1,8 @@
 //
-//  CharWalkLeft.h
+//  CharWalk.h
 //  CloudJumper
 //
-//  Created by Tony Fu on 2/23/15.
+//  Created by Tony Fu on 4/9/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
