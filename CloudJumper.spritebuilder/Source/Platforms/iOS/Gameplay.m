@@ -24,11 +24,17 @@
     CCNode *_bg2;
     NSArray *_bgs;
     
+    CCSprite *_heart1;
+    CCSprite *_heart2;
+    CCSprite *_heart3;
+    
     CCLabelTTF *_gameOverLabel;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_finalScoreLabel;
     CCLabelTTF *_topScoreLabel;
     CCButton *_restartButton;
+    
+    CCNode *lastCollision;
     
     TopNail *_topnail;
     
@@ -36,8 +42,9 @@
     BOOL faceRight; // YES if character moves right
     
     float moveHeight;
-    int prevCloud;
+    BOOL firstCloud;
     int points;
+    int heartNum;
     CGFloat screenHeight;
     CGFloat screenWidth;
     BOOL _gameOver;
@@ -69,8 +76,9 @@
 
     timeSinceObstacle = 0.0f;
     moveHeight = 50.0f;
-    prevCloud = 0;
+    firstCloud = TRUE;
     points = 0;
+    heartNum = 3;
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenHeight = screenRect.size.height;
@@ -163,9 +171,9 @@
 }
 
 - (void)addCloud:(CGFloat)y {
-    int cloudNum = (arc4random() % 3) + 1;
+    int randomCloud = CCRANDOM_0_1() * 100;
     
-    while (prevCloud == 1 && cloudNum == 1) {
+    /*while (prevCloud == 1 && cloudNum == 1) {
         cloudNum = (arc4random() % 3) + 1;
     }
     
@@ -223,6 +231,45 @@
                 break;
             }
         }
+    }*/
+    
+    if (firstCloud) {
+        Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
+        CGPoint screenPosition = [self convertToWorldSpace:ccp(155, y)];
+        CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
+        cloud.position = worldPosition;
+        [_physicsNode addChild:cloud];
+        [_clouds addObject:cloud];
+        firstCloud = FALSE;
+    } else {
+        CGPoint screenPosition = [self convertToWorldSpace:ccp(0, y)];
+        CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
+        
+        if (randomCloud <= 50) {
+            Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
+            cloud.position = worldPosition;
+            [cloud setupRandomPosition];
+            [_physicsNode addChild:cloud];
+            [_clouds addObject:cloud];
+        } else if (randomCloud <= 70) {
+            Cloud1 *cloud = (Cloud1 *)[CCBReader load:@"Cloud1"];
+            cloud.position = worldPosition;
+            [cloud setupRandomPosition];
+            [_physicsNode addChild:cloud];
+            [_clouds addObject:cloud];
+        } else if (randomCloud <= 85) {
+            Cloud3 *cloud = (Cloud3 *)[CCBReader load:@"Cloud3"];
+            cloud.position = worldPosition;
+            [cloud setupRandomPosition];
+            [_physicsNode addChild:cloud];
+            [_clouds addObject:cloud];
+        } else {
+            Cloud4 *cloud = (Cloud4 *)[CCBReader load:@"Cloud4"];
+            cloud.position = worldPosition;
+            [cloud setupRandomPosition];
+            [_physicsNode addChild:cloud];
+            [_clouds addObject:cloud];
+        }
     }
 }
 
@@ -235,6 +282,32 @@
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character topnail:(CCNode *)topnail {
     [self gameOver];
+    points++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
+    return TRUE;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud1:(CCNode *)cloud1 {
+    [self removeCloud:cloud1];
+    
+    return TRUE;
+}
+
+-(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud4:(CCNode *)cloud4 {
+    if (lastCollision != cloud4) {
+        if (heartNum == 3) {
+            _heart1.visible = FALSE;
+            heartNum--;
+        } else if (heartNum == 2) {
+            _heart2.visible = FALSE;
+            heartNum--;
+        } else if (heartNum == 1) {
+            _heart3.visible = FALSE;
+            [self gameOver];
+        }
+        lastCollision = cloud4;
+    }
+    
     return TRUE;
 }
 
@@ -244,6 +317,10 @@
         
         _finalScoreLabel.string = [NSString stringWithFormat:@"Final Score: %d", points];
         _topScoreLabel.string = [NSString stringWithFormat:@"Top Score: %d", points];
+        
+        _heart1.visible = FALSE;
+        _heart2.visible = FALSE;
+        _heart3.visible = FALSE;
         
         _topnail.visible = FALSE;
         _scoreLabel.visible = FALSE;
@@ -267,7 +344,6 @@
     cloudClear.autoRemoveOnFinish = TRUE;
     cloudClear.position = cloud.position;
     [cloud.parent addChild:cloudClear];
-    
     [cloud removeFromParent];
 }
 

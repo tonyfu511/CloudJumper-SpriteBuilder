@@ -19,6 +19,8 @@
 - (void)didLoadFromCCB {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenWidth = screenRect.size.width;
+    
+    _cloud.physicsBody.collisionType = @"cloud4";
 }
 
 - (void)setupRandomPosition {
