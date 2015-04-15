@@ -51,7 +51,7 @@
 				<key>displayName</key>
 				<string>CCSprite</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>_cloud</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -75,64 +75,46 @@
 					<key>dynamic</key>
 					<false/>
 					<key>elasticity</key>
-					<real>0.30000001192092896</real>
+					<real>0.0</real>
 					<key>friction</key>
 					<real>0.30000001192092896</real>
 					<key>points</key>
 					<array>
 						<array>
-							<real>4.710968017578125</real>
-							<real>12.160171508789062</real>
+							<real>29.769561767578125</real>
+							<real>13.296890258789062</real>
 						</array>
 						<array>
-							<real>5.449249267578125</real>
-							<real>12.160171508789062</real>
+							<real>71.093780517578125</real>
+							<real>13.117202758789062</real>
 						</array>
 						<array>
-							<real>13.699249267578125</real>
-							<real>12.464859008789062</real>
+							<real>71.105499267578125</real>
+							<real>5.0586090087890625</real>
 						</array>
 						<array>
-							<real>13.656280517578125</real>
-							<real>5.2578277587890625</real>
-						</array>
-						<array>
-							<real>5.105499267578125</real>
-							<real>5.7148590087890625</real>
+							<real>29.695343017578125</real>
+							<real>5.0156402587890625</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>5.449249267578125</real>
-								<real>12.160171508789062</real>
+								<real>29.695343017578125</real>
+								<real>5.0156402587890625</real>
 							</array>
 							<array>
-								<real>4.710968017578125</real>
-								<real>12.160171508789062</real>
+								<real>71.105499267578125</real>
+								<real>5.0586090087890625</real>
 							</array>
 							<array>
-								<real>5.105499267578125</real>
-								<real>5.7148590087890625</real>
-							</array>
-						</array>
-						<array>
-							<array>
-								<real>5.105499267578125</real>
-								<real>5.7148590087890625</real>
+								<real>71.093780517578125</real>
+								<real>13.117202758789062</real>
 							</array>
 							<array>
-								<real>13.656280517578125</real>
-								<real>5.2578277587890625</real>
-							</array>
-							<array>
-								<real>13.699249267578125</real>
-								<real>12.464859008789062</real>
-							</array>
-							<array>
-								<real>5.449249267578125</real>
-								<real>12.160171508789062</real>
+								<real>29.769561767578125</real>
+								<real>13.296890258789062</real>
 							</array>
 						</array>
 					</array>
@@ -346,7 +328,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>-3</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -446,8 +428,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

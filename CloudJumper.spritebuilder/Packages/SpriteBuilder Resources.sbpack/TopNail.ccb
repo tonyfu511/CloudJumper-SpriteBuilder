@@ -36,13 +36,13 @@
 	<key>nodeGraph</key>
 	<dict>
 		<key>baseClass</key>
-		<string>CCNode</string>
+		<string>CCSprite</string>
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string>Goal</string>
+		<string>TopNail</string>
 		<key>displayName</key>
-		<string>CCNode</string>
+		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>
@@ -60,7 +60,7 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string></string>
+			<string>topnail</string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>2.5703277587890625</real>
+					<real>2.5156402587890625</real>
 				</array>
 				<array>
-					<real>-0.29687118530273438</real>
-					<real>3.9297027587890625</real>
+					<real>3.011749267578125</real>
+					<real>23.238296508789062</real>
 				</array>
 				<array>
-					<real>799.80084228515625</real>
-					<real>3.9687652587890625</real>
+					<real>384.390625</real>
+					<real>22.558609008789062</real>
 				</array>
 				<array>
-					<real>800</real>
-					<real>0.0</real>
+					<real>384.16796875</real>
+					<real>3.0117340087890625</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>800</real>
-						<real>0.0</real>
+						<real>384.16796875</real>
+						<real>3.0117340087890625</real>
 					</array>
 					<array>
-						<real>799.80084228515625</real>
-						<real>3.9687652587890625</real>
+						<real>384.390625</real>
+						<real>22.558609008789062</real>
 					</array>
 					<array>
-						<real>-0.29687118530273438</real>
-						<real>3.9297027587890625</real>
+						<real>3.011749267578125</real>
+						<real>23.238296508789062</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>0.0</real>
+						<real>2.5703277587890625</real>
+						<real>2.5156402587890625</real>
 					</array>
 				</array>
 			</array>
@@ -138,19 +138,6 @@
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>contentSize</string>
-				<key>type</key>
-				<string>Size</string>
-				<key>value</key>
-				<array>
-					<real>800</real>
-					<real>3</real>
-					<integer>0</integer>
-					<integer>0</integer>
-				</array>
-			</dict>
-			<dict>
-				<key>name</key>
 				<string>anchorPoint</string>
 				<key>type</key>
 				<string>Point</string>
@@ -172,6 +159,49 @@
 					<false/>
 					<integer>0</integer>
 				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>spriteFrame</string>
+				<key>type</key>
+				<string>SpriteFrame</string>
+				<key>value</key>
+				<array>
+					<string></string>
+					<string>set_cloud-jumper/TopNail.png</string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>normalMapSpriteFrame</string>
+				<key>type</key>
+				<string>SpriteFrame</string>
+				<key>value</key>
+				<array>
+					<string></string>
+					<string></string>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>color</string>
+				<key>type</key>
+				<string>Color3</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<real>1</real>
+					<real>1</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>effects</string>
+				<key>type</key>
+				<string>EffectControl</string>
+				<key>value</key>
+				<array/>
 			</dict>
 		</array>
 		<key>selected</key>
@@ -252,6 +282,6 @@
 	<key>stageBorder</key>
 	<integer>3</integer>
 	<key>stageColor</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

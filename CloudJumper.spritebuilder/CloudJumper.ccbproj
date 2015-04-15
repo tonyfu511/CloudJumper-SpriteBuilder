@@ -167,21 +167,6 @@
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
-		<key>set_cloud-jumper/cloud1.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
-		</dict>
-		<key>set_cloud-jumper/cloud2.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
-		</dict>
-		<key>set_cloud-jumper/cloud3.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>4</integer>
-		</dict>
 	</dict>
 	<key>versionStr</key>
 	<string>revision : 10891b8575

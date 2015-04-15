@@ -12,7 +12,9 @@
 
 - (void)didLoadFromCCB
 {
-    self.position = ccp(155, -150);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
+    self.position = ccp(155, screenHeight - 180);
     self.physicsBody.collisionType = @"character";
 }
 

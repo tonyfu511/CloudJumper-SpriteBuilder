@@ -64,6 +64,12 @@
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		92A5EFDA1AD72DC800151661 /* CharWalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFD91AD72DC800151661 /* CharWalk.m */; };
+		92A5EFDD1AD72E2800151661 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFDC1AD72E2800151661 /* Goal.m */; };
+		92A5EFE01AD8AB0600151661 /* Cloud1.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFDF1AD8AB0600151661 /* Cloud1.m */; };
+		92A5EFE31AD8AB1900151661 /* Cloud2.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFE21AD8AB1900151661 /* Cloud2.m */; };
+		92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFE51AD8AB2800151661 /* Cloud3.m */; };
+		92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF41ADD8CFC00151661 /* Cloud4.m */; };
+		92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF91ADDA97900151661 /* TopNail.m */; };
 		92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */; };
 		92D1C9BF1A9BA87D003CA9CD /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D1C9BE1A9BA87C003CA9CD /* Plane.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -178,6 +184,18 @@
 		927F61BF196C771E000F43EF /* CloudJumper Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudJumper Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A5EFD81AD72DC800151661 /* CharWalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharWalk.h; path = Source/Platforms/iOS/CharWalk.h; sourceTree = "<group>"; };
 		92A5EFD91AD72DC800151661 /* CharWalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharWalk.m; path = Source/Platforms/iOS/CharWalk.m; sourceTree = "<group>"; };
+		92A5EFDB1AD72E2800151661 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = Source/Platforms/iOS/Goal.h; sourceTree = "<group>"; };
+		92A5EFDC1AD72E2800151661 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = Source/Platforms/iOS/Goal.m; sourceTree = "<group>"; };
+		92A5EFDE1AD8AB0600151661 /* Cloud1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud1.h; path = Source/Platforms/iOS/Cloud1.h; sourceTree = "<group>"; };
+		92A5EFDF1AD8AB0600151661 /* Cloud1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud1.m; path = Source/Platforms/iOS/Cloud1.m; sourceTree = "<group>"; };
+		92A5EFE11AD8AB1900151661 /* Cloud2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud2.h; path = Source/Platforms/iOS/Cloud2.h; sourceTree = "<group>"; };
+		92A5EFE21AD8AB1900151661 /* Cloud2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud2.m; path = Source/Platforms/iOS/Cloud2.m; sourceTree = "<group>"; };
+		92A5EFE41AD8AB2800151661 /* Cloud3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud3.h; path = Source/Platforms/iOS/Cloud3.h; sourceTree = "<group>"; };
+		92A5EFE51AD8AB2800151661 /* Cloud3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud3.m; path = Source/Platforms/iOS/Cloud3.m; sourceTree = "<group>"; };
+		92A5EFF31ADD8CFC00151661 /* Cloud4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud4.h; path = Source/Platforms/iOS/Cloud4.h; sourceTree = "<group>"; };
+		92A5EFF41ADD8CFC00151661 /* Cloud4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud4.m; path = Source/Platforms/iOS/Cloud4.m; sourceTree = "<group>"; };
+		92A5EFF81ADDA97900151661 /* TopNail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopNail.h; path = Source/Platforms/iOS/TopNail.h; sourceTree = "<group>"; };
+		92A5EFF91ADDA97900151661 /* TopNail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopNail.m; path = Source/Platforms/iOS/TopNail.m; sourceTree = "<group>"; };
 		92D1C9AE1A9AB0FC003CA9CD /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Platforms/iOS/Gameplay.h; sourceTree = "<group>"; };
 		92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Platforms/iOS/Gameplay.m; sourceTree = "<group>"; };
 		92D1C9BD1A9BA87C003CA9CD /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
@@ -346,6 +364,18 @@
 				92D1C9BE1A9BA87C003CA9CD /* Plane.m */,
 				92A5EFD81AD72DC800151661 /* CharWalk.h */,
 				92A5EFD91AD72DC800151661 /* CharWalk.m */,
+				92A5EFDB1AD72E2800151661 /* Goal.h */,
+				92A5EFDC1AD72E2800151661 /* Goal.m */,
+				92A5EFDE1AD8AB0600151661 /* Cloud1.h */,
+				92A5EFDF1AD8AB0600151661 /* Cloud1.m */,
+				92A5EFE11AD8AB1900151661 /* Cloud2.h */,
+				92A5EFE21AD8AB1900151661 /* Cloud2.m */,
+				92A5EFE41AD8AB2800151661 /* Cloud3.h */,
+				92A5EFE51AD8AB2800151661 /* Cloud3.m */,
+				92A5EFF31ADD8CFC00151661 /* Cloud4.h */,
+				92A5EFF41ADD8CFC00151661 /* Cloud4.m */,
+				92A5EFF81ADDA97900151661 /* TopNail.h */,
+				92A5EFF91ADDA97900151661 /* TopNail.m */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -832,11 +862,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D1C9BF1A9BA87D003CA9CD /* Plane.m in Sources */,
+				92A5EFDD1AD72E2800151661 /* Goal.m in Sources */,
+				92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */,
+				92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				92A5EFE01AD8AB0600151661 /* Cloud1.m in Sources */,
+				92A5EFE31AD8AB1900151661 /* Cloud2.m in Sources */,
 				92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				92A5EFDA1AD72DC800151661 /* CharWalk.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
