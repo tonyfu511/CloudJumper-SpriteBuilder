@@ -9,7 +9,5 @@
 #import <CCNode.h>
 
 @interface Gameplay : CCNode <CCPhysicsCollisionDelegate>
-{
-    float timeSinceObstacle;
-}
+
 @end

@@ -28,6 +28,8 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 
+#import "GameDataSingleton.h"
+
 @implementation AppController
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -54,7 +56,16 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    GameDataSingleton *gameData = [GameDataSingleton getInstance];
+    [gameData load];
+    
     return YES;
+}
+
+- (void) applicationWillTerminate:(UIApplication *)application
+{
+    GameDataSingleton *gameData = [GameDataSingleton getInstance];
+    [gameData save];
 }
 
 - (CCScene*) startScene

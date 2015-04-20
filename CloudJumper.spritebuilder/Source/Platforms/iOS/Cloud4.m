@@ -27,10 +27,10 @@
     // value between 0.f and 1.f
     CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
     CGFloat newX = screenWidth * random;
-    if (newX < self.contentSize.width / 2) {
-        newX = self.contentSize.width / 2;
-    } else if (newX > screenWidth - self.contentSize.width / 2) {
-        newX = screenWidth = self.contentSize.width / 2;
+    if (newX < _cloud.contentSize.width / 2) {
+        newX = _cloud.contentSize.width / 2;
+    } else if (newX > screenWidth - _cloud.contentSize.width / 2) {
+        newX = screenWidth = _cloud.contentSize.width / 2;
     }
     self.position = ccp(newX, self.position.y);
 }

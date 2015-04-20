@@ -70,8 +70,8 @@
 		92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFE51AD8AB2800151661 /* Cloud3.m */; };
 		92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF41ADD8CFC00151661 /* Cloud4.m */; };
 		92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF91ADDA97900151661 /* TopNail.m */; };
+		92A5F0031AE49F7200151661 /* GameDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5F0021AE49F7200151661 /* GameDataSingleton.m */; };
 		92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */; };
-		92D1C9BF1A9BA87D003CA9CD /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D1C9BE1A9BA87C003CA9CD /* Plane.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -196,10 +196,10 @@
 		92A5EFF41ADD8CFC00151661 /* Cloud4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud4.m; path = Source/Platforms/iOS/Cloud4.m; sourceTree = "<group>"; };
 		92A5EFF81ADDA97900151661 /* TopNail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopNail.h; path = Source/Platforms/iOS/TopNail.h; sourceTree = "<group>"; };
 		92A5EFF91ADDA97900151661 /* TopNail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopNail.m; path = Source/Platforms/iOS/TopNail.m; sourceTree = "<group>"; };
+		92A5F0011AE49F7200151661 /* GameDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDataSingleton.h; path = Source/Platforms/iOS/GameDataSingleton.h; sourceTree = "<group>"; };
+		92A5F0021AE49F7200151661 /* GameDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDataSingleton.m; path = Source/Platforms/iOS/GameDataSingleton.m; sourceTree = "<group>"; };
 		92D1C9AE1A9AB0FC003CA9CD /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Platforms/iOS/Gameplay.h; sourceTree = "<group>"; };
 		92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Platforms/iOS/Gameplay.m; sourceTree = "<group>"; };
-		92D1C9BD1A9BA87C003CA9CD /* Plane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
-		92D1C9BE1A9BA87C003CA9CD /* Plane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -360,8 +360,6 @@
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 				92D1C9AE1A9AB0FC003CA9CD /* Gameplay.h */,
 				92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */,
-				92D1C9BD1A9BA87C003CA9CD /* Plane.h */,
-				92D1C9BE1A9BA87C003CA9CD /* Plane.m */,
 				92A5EFD81AD72DC800151661 /* CharWalk.h */,
 				92A5EFD91AD72DC800151661 /* CharWalk.m */,
 				92A5EFDB1AD72E2800151661 /* Goal.h */,
@@ -376,6 +374,8 @@
 				92A5EFF41ADD8CFC00151661 /* Cloud4.m */,
 				92A5EFF81ADDA97900151661 /* TopNail.h */,
 				92A5EFF91ADDA97900151661 /* TopNail.m */,
+				92A5F0011AE49F7200151661 /* GameDataSingleton.h */,
+				92A5F0021AE49F7200151661 /* GameDataSingleton.m */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -861,7 +861,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D1C9BF1A9BA87D003CA9CD /* Plane.m in Sources */,
 				92A5EFDD1AD72E2800151661 /* Goal.m in Sources */,
 				92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */,
 				92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */,
@@ -871,6 +870,7 @@
 				92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				92A5EFDA1AD72DC800151661 /* CharWalk.m in Sources */,
+				92A5F0031AE49F7200151661 /* GameDataSingleton.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */,
 			);

@@ -13,6 +13,7 @@
 #import "Cloud3.h"
 #import "Cloud4.h"
 #import "TopNail.h"
+#import "GameDataSingleton.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation Gameplay {
@@ -48,14 +49,16 @@
     CGFloat screenHeight;
     CGFloat screenWidth;
     BOOL _gameOver;
+    
+    float timeSinceObstacle;
+    double time;
+    
+    GameDataSingleton *gameData;
 }
 
 - (void)didLoadFromCCB {
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
-    
-    // visualize physics bodies & joints
-    //_physicsNode.debugDraw = TRUE;
     
     _physicsNode.collisionDelegate = self;
     
@@ -67,9 +70,6 @@
 }
 
 - (void)initialize {
-    //CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
-    //[_levelNode addChild:level];
-    
     _character = (CCSprite*)[CCBReader load:@"CharWalk"];
     [_physicsNode addChild:_character];
     faceRight = YES;
@@ -87,6 +87,8 @@
     for (CGFloat y = 200.0f; y <= screenHeight; y += 70.0f) {
         [self addCloud:screenHeight - y];
     }
+    
+    gameData = [GameDataSingleton getInstance];
 }
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
@@ -94,13 +96,13 @@
         CGPoint touchLocation = [touch locationInNode:_physicsNode];
         CGPoint charLocation = _character.position;
         
-        if (touchLocation.x - charLocation.x > 0) {
+        if (touchLocation.x > charLocation.x) {
             if (!faceRight) {
                 faceRight = YES;
                 [_character setFlipX:NO];
             }
             _character.position = CGPointMake(charLocation.x + 10, charLocation.y);
-        } else if (touchLocation.x - charLocation.x < 0) {
+        } else if (touchLocation.x < charLocation.x) {
             if (faceRight) {
                 faceRight = NO;
                 [_character setFlipX:YES];
@@ -126,6 +128,12 @@
     }
     
     if (!_gameOver) {
+        time += delta;
+        if (time >= 15.0) {
+            moveHeight += 10;
+            time = 0.0;
+        }
+        
         _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y + (moveHeight * delta));
         
         _topnail.position = ccp(_topnail.position.x, _topnail.position.y - (moveHeight * delta));
@@ -173,66 +181,6 @@
 - (void)addCloud:(CGFloat)y {
     int randomCloud = CCRANDOM_0_1() * 100;
     
-    /*while (prevCloud == 1 && cloudNum == 1) {
-        cloudNum = (arc4random() % 3) + 1;
-    }
-    
-    if (prevCloud == 0) {
-        Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
-        CGPoint screenPosition = [self convertToWorldSpace:ccp(155, y)];
-        CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
-        cloud.position = worldPosition;
-        [_physicsNode addChild:cloud];
-        [_clouds addObject:cloud];
-        prevCloud = 2;
-    } else {
-        CGPoint screenPosition = [self convertToWorldSpace:ccp(0, y)];
-        CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
-
-        switch (cloudNum) {
-            case 1:
-            {
-                Cloud1 *cloud = (Cloud1 *)[CCBReader load:@"Cloud1"];
-                cloud.position = worldPosition;
-                [cloud setupRandomPosition];
-                [_physicsNode addChild:cloud];
-                [_clouds addObject:cloud];
-                prevCloud = 1;
-                break;
-            }
-            case 2:
-            {
-                Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
-                cloud.position = worldPosition;
-                [cloud setupRandomPosition];
-                [_physicsNode addChild:cloud];
-                [_clouds addObject:cloud];
-                prevCloud = 2;
-                break;
-            }
-            case 3:
-            {
-                Cloud3 *cloud = (Cloud3 *)[CCBReader load:@"Cloud3"];
-                cloud.position = worldPosition;
-                [cloud setupRandomPosition];
-                [_physicsNode addChild:cloud];
-                [_clouds addObject:cloud];
-                prevCloud = 3;
-                break;
-            }
-            default:
-            {
-                Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
-                cloud.position = worldPosition;
-                [cloud setupRandomPosition];
-                [_physicsNode addChild:cloud];
-                [_clouds addObject:cloud];
-                prevCloud = 2;
-                break;
-            }
-        }
-    }*/
-    
     if (firstCloud) {
         Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
         CGPoint screenPosition = [self convertToWorldSpace:ccp(155, y)];
@@ -251,13 +199,13 @@
             [cloud setupRandomPosition];
             [_physicsNode addChild:cloud];
             [_clouds addObject:cloud];
-        } else if (randomCloud <= 70) {
+        } else if (randomCloud <= 65) {
             Cloud1 *cloud = (Cloud1 *)[CCBReader load:@"Cloud1"];
             cloud.position = worldPosition;
             [cloud setupRandomPosition];
             [_physicsNode addChild:cloud];
             [_clouds addObject:cloud];
-        } else if (randomCloud <= 85) {
+        } else if (randomCloud <= 90) {
             Cloud3 *cloud = (Cloud3 *)[CCBReader load:@"Cloud3"];
             cloud.position = worldPosition;
             [cloud setupRandomPosition];
@@ -315,8 +263,14 @@
     if (!_gameOver) {
         _gameOver = TRUE;
         
+        NSInteger topPoints = topPoints = [gameData getTopScore];
+        if (topPoints < points) {
+            topPoints = points;
+        }
+        [gameData setTopScore:topPoints];
+        
         _finalScoreLabel.string = [NSString stringWithFormat:@"Final Score: %d", points];
-        _topScoreLabel.string = [NSString stringWithFormat:@"Top Score: %d", points];
+        _topScoreLabel.string = [NSString stringWithFormat:@"Top Score: %d", (int)topPoints];
         
         _heart1.visible = FALSE;
         _heart2.visible = FALSE;
