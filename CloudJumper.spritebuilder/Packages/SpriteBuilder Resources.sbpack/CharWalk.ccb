@@ -52,12 +52,12 @@
 							<key>name</key>
 							<string>spriteFrame</string>
 							<key>time</key>
-							<real>0.0</real>
+							<real>0.033333335071802139</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>set_cloud-jumper/char_walk_1.png</string>
+								<string>set_cloud-jumper/char_walk_2.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -70,12 +70,12 @@
 							<key>name</key>
 							<string>spriteFrame</string>
 							<key>time</key>
-							<real>0.033333335071802139</real>
+							<real>0.1666666716337204</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>set_cloud-jumper/char_walk_2.png</string>
+								<string>set_cloud-jumper/char_walk_1.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -134,24 +134,24 @@
 					<real>34.8828125</real>
 				</array>
 				<array>
-					<real>27.769500732421875</real>
-					<real>34.734375</real>
+					<real>23.499969482421875</real>
+					<real>34.921875</real>
 				</array>
 				<array>
-					<real>27.894500732421875</real>
-					<real>3.296875</real>
+					<real>22.765594482421875</real>
+					<real>3.7890625</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>27.894500732421875</real>
-						<real>3.296875</real>
+						<real>22.765594482421875</real>
+						<real>3.7890625</real>
 					</array>
 					<array>
-						<real>27.769500732421875</real>
-						<real>34.734375</real>
+						<real>23.499969482421875</real>
+						<real>34.921875</real>
 					</array>
 					<array>
 						<real>10.886688232421875</real>
@@ -261,6 +261,10 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
+		<key>seqExpanded</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -310,19 +314,55 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>0.066666670143604279</real>
+			<real>0.3333333432674408</real>
 			<key>name</key>
-			<string>Default Timeline</string>
+			<string>CupidWalk</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.066666670143604279</real>
+			<real>0.3333333432674408</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
 			<real>128</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>isExpanded</key>
+				<false/>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>autoPlay</key>
+			<false/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>12</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Untitled Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>1</integer>
 			<key>soundChannel</key>
 			<dict>
 				<key>isExpanded</key>
