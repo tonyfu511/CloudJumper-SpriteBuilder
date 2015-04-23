@@ -16,6 +16,9 @@
 #import "GameDataSingleton.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKShareKit/FBSDKShareKit.h>
+
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
     
@@ -34,6 +37,7 @@
     CCLabelTTF *_finalScoreLabel;
     CCLabelTTF *_topScoreLabel;
     CCButton *_restartButton;
+    CCButton *_fbButton;
     
     CCNode *lastCollision;
     
@@ -56,6 +60,8 @@
     GameDataSingleton *gameData;
 }
 
+static float const MIN_DISTANCE = 20.0f;
+
 - (void)didLoadFromCCB {
     // tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
@@ -73,7 +79,7 @@
     _character = (CCSprite*)[CCBReader load:@"CharWalk"];
     [_physicsNode addChild:_character];
     faceRight = YES;
-
+    
     timeSinceObstacle = 0.0f;
     moveHeight = 50.0f;
     firstCloud = TRUE;
@@ -96,18 +102,21 @@
         CGPoint touchLocation = [touch locationInNode:_physicsNode];
         CGPoint charLocation = _character.position;
         
+        CCAnimationManager *animationManager = _character.animationManager;
+        [animationManager runAnimationsForSequenceNamed:@"CupidWalk"];
+        
         if (touchLocation.x > charLocation.x) {
             if (!faceRight) {
                 faceRight = YES;
                 [_character setFlipX:NO];
             }
-            _character.position = CGPointMake(charLocation.x + 10, charLocation.y);
+            _character.position = CGPointMake(charLocation.x + 20, charLocation.y);
         } else if (touchLocation.x < charLocation.x) {
             if (faceRight) {
                 faceRight = NO;
                 [_character setFlipX:YES];
             }
-            _character.position = CGPointMake(charLocation.x - 10, charLocation.y);
+            _character.position = CGPointMake(charLocation.x - 20, charLocation.y);
         }
     }
 }
@@ -179,8 +188,6 @@
 }
 
 - (void)addCloud:(CGFloat)y {
-    int randomCloud = CCRANDOM_0_1() * 100;
-    
     if (firstCloud) {
         Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
         CGPoint screenPosition = [self convertToWorldSpace:ccp(155, y)];
@@ -192,56 +199,97 @@
     } else {
         CGPoint screenPosition = [self convertToWorldSpace:ccp(0, y)];
         CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
+        CCNode *node;
         
-        if (randomCloud <= 50) {
-            Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
-            cloud.position = worldPosition;
-            [cloud setupRandomPosition];
-            [_physicsNode addChild:cloud];
-            [_clouds addObject:cloud];
-        } else if (randomCloud <= 65) {
-            Cloud1 *cloud = (Cloud1 *)[CCBReader load:@"Cloud1"];
-            cloud.position = worldPosition;
-            [cloud setupRandomPosition];
-            [_physicsNode addChild:cloud];
-            [_clouds addObject:cloud];
-        } else if (randomCloud <= 90) {
-            Cloud3 *cloud = (Cloud3 *)[CCBReader load:@"Cloud3"];
-            cloud.position = worldPosition;
-            [cloud setupRandomPosition];
-            [_physicsNode addChild:cloud];
-            [_clouds addObject:cloud];
-        } else {
-            Cloud4 *cloud = (Cloud4 *)[CCBReader load:@"Cloud4"];
-            cloud.position = worldPosition;
-            [cloud setupRandomPosition];
-            [_physicsNode addChild:cloud];
-            [_clouds addObject:cloud];
+        while (TRUE) {
+            int randomCloud = CCRANDOM_0_1() * 100;
+            
+            if (randomCloud <= 50) {
+                Cloud2 *cloud = (Cloud2 *)[CCBReader load:@"Cloud2"];
+                cloud.position = worldPosition;
+                [cloud setupRandomPosition];
+                node = cloud;
+            } else if (randomCloud <= 75) {
+                Cloud1 *cloud = (Cloud1 *)[CCBReader load:@"Cloud1"];
+                cloud.position = worldPosition;
+                [cloud setupRandomPosition];
+                node = cloud;
+            } else if (randomCloud <= 90) {
+                Cloud3 *cloud = (Cloud3 *)[CCBReader load:@"Cloud3"];
+                cloud.position = worldPosition;
+                [cloud setupRandomPosition];
+                node = cloud;
+            } else {
+                Cloud4 *cloud = (Cloud4 *)[CCBReader load:@"Cloud4"];
+                cloud.position = worldPosition;
+                [cloud setupRandomPosition];
+                node = cloud;
+            }
+            
+            if ([self isValidCloud:node]) {
+                [_physicsNode addChild:node];
+                [_clouds addObject:node];
+                break;
+            }
         }
     }
 }
 
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character goal:(CCNode *)goal {
+- (BOOL)isValidCloud:(CCNode *)node1 {
+    if (_clouds.count >= 2) {
+        CCNode *node2 = [_clouds objectAtIndex:_clouds.count - 1];
+        CCNode *node3 = [_clouds objectAtIndex:_clouds.count - 2];
+        float x1 = node1.position.x;
+        float x2 = node2.position.x;
+        float x3 = node3.position.x;
+        
+        if (fabsf(x1 - x2) <= MIN_DISTANCE && fabsf(x2 - x3) <= MIN_DISTANCE && fabsf(x1 - x3) <= MIN_DISTANCE) {
+            return FALSE;
+        }
+        
+        if ([node1 isKindOfClass:[Cloud1 class]]) {
+            if ([node2 isKindOfClass:[Cloud1 class]] && [node3 isKindOfClass:[Cloud1 class]]) {
+                return FALSE;
+            }
+        } else if ([node1 isKindOfClass:[Cloud2 class]]) {
+            if ([node2 isKindOfClass:[Cloud2 class]] && [node3 isKindOfClass:[Cloud2 class]]) {
+                return FALSE;
+            }
+        } else if ([node1 isKindOfClass:[Cloud3 class]]) {
+            if ([node2 isKindOfClass:[Cloud3 class]] && [node3 isKindOfClass:[Cloud3 class]]) {
+                return FALSE;
+            }
+        } else if ([node1 isKindOfClass:[Cloud4 class]]) {
+            if ([node2 isKindOfClass:[Cloud4 class]] && [node3 isKindOfClass:[Cloud4 class]]) {
+                return FALSE;
+            }
+        }
+    }
+    
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character goal:(CCNode *)goal {
     [goal removeFromParent];
     points++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }
 
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character topnail:(CCNode *)topnail {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character topnail:(CCNode *)topnail {
     [self gameOver];
     points++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }
 
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud1:(CCNode *)cloud1 {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud1:(CCNode *)cloud1 {
     [self removeCloud:cloud1];
     
     return TRUE;
 }
 
--(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud4:(CCNode *)cloud4 {
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud4:(CCNode *)cloud4 {
     if (lastCollision != cloud4) {
         if (heartNum == 3) {
             _heart1.visible = FALSE;
@@ -282,6 +330,7 @@
         _finalScoreLabel.visible = TRUE;
         _topScoreLabel.visible = TRUE;
         _restartButton.visible = TRUE;
+        _fbButton.visible = TRUE;
         
         for (CCNode *cloud in _clouds) {
             [self removeCloud:cloud];
@@ -300,5 +349,23 @@
     [cloud.parent addChild:cloudClear];
     [cloud removeFromParent];
 }
+
+/*- (void)shareToFacebook {
+    UIImage *img = [UIImage imageNamed:@"spacemonkey.png"];
+    
+    FBSDKSharePhoto *screen = [[FBSDKSharePhoto alloc] init];
+    screen.image = img;
+    screen.userGenerated = YES;
+    [screen setImageURL:[NSURL URLWithString:@"http://spacemonkey.kailiangchen.com"]];
+    
+    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+    content.photos = @[screen];
+    
+    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+    dialog.fromViewController = [CCDirector sharedDirector];
+    [dialog setShareContent:content];
+    dialog.mode = FBSDKShareDialogModeShareSheet;
+    [dialog show];
+}*/
 
 @end
