@@ -164,6 +164,8 @@
 		</dict>
 		<key>set_cloud-jumper</key>
 		<dict>
+			<key>isDirty</key>
+			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>

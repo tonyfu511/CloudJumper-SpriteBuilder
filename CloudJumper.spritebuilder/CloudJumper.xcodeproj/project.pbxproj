@@ -44,8 +44,6 @@
 		7A97911719E631C6001FFC4D /* libcocos2d-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A97910419E62E40001FFC4D /* libcocos2d-mac.a */; };
 		7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9790FE19E62E40001FFC4D /* libcocos2d.a */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
-		924D3B031AE9A50600BDA1DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924D3B011AE9A50600BDA1DD /* FBSDKCoreKit.framework */; };
-		924D3B041AE9A50600BDA1DD /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924D3B021AE9A50600BDA1DD /* FBSDKShareKit.framework */; };
 		927F619E196C771E000F43EF /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		927F61A5196C771E000F43EF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
 		927F61A9196C771E000F43EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
@@ -65,15 +63,18 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
-		92A5EFDA1AD72DC800151661 /* CharWalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFD91AD72DC800151661 /* CharWalk.m */; };
-		92A5EFDD1AD72E2800151661 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFDC1AD72E2800151661 /* Goal.m */; };
-		92A5EFE01AD8AB0600151661 /* Cloud1.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFDF1AD8AB0600151661 /* Cloud1.m */; };
-		92A5EFE31AD8AB1900151661 /* Cloud2.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFE21AD8AB1900151661 /* Cloud2.m */; };
-		92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFE51AD8AB2800151661 /* Cloud3.m */; };
-		92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF41ADD8CFC00151661 /* Cloud4.m */; };
-		92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5EFF91ADDA97900151661 /* TopNail.m */; };
-		92A5F0031AE49F7200151661 /* GameDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A5F0021AE49F7200151661 /* GameDataSingleton.m */; };
-		92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */; };
+		92FD355E1AE9CADB00D20B0F /* CharWalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD354D1AE9CADA00D20B0F /* CharWalk.m */; };
+		92FD355F1AE9CADB00D20B0F /* Cloud1.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD354F1AE9CADA00D20B0F /* Cloud1.m */; };
+		92FD35601AE9CADB00D20B0F /* Cloud2.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35511AE9CADA00D20B0F /* Cloud2.m */; };
+		92FD35611AE9CADB00D20B0F /* Cloud3.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35531AE9CADA00D20B0F /* Cloud3.m */; };
+		92FD35621AE9CADB00D20B0F /* Cloud4.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35551AE9CADA00D20B0F /* Cloud4.m */; };
+		92FD35631AE9CADB00D20B0F /* GameDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35571AE9CADA00D20B0F /* GameDataSingleton.m */; };
+		92FD35641AE9CADB00D20B0F /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35591AE9CADB00D20B0F /* Gameplay.m */; };
+		92FD35651AE9CADB00D20B0F /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD355B1AE9CADB00D20B0F /* Goal.m */; };
+		92FD35661AE9CADB00D20B0F /* TopNail.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD355D1AE9CADB00D20B0F /* TopNail.m */; };
+		92FD35711AE9CD7700D20B0F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */; };
+		92FD35721AE9CD7700D20B0F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */; };
+		92FD35741AE9CE8B00D20B0F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35731AE9CE8B00D20B0F /* Bolts.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -150,7 +151,7 @@
 			remoteGlobalIDString = D2FEB60D194F6C9E00FC0574;
 			remoteInfo = cocos2dAndroid;
 		};
-		92D1C9AA1A9AB004003CA9CD /* PBXContainerItemProxy */ = {
+		92FD352D1AE9C9FD00D20B0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B7378940180761A80076A88C /* cocos2d.xcodeproj */;
 			proxyType = 2;
@@ -183,27 +184,28 @@
 		7AFCD5DD19E9BDC200BCCCDA /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Source/Bridging-Header.h"; sourceTree = "<group>"; };
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		924D3B011AE9A50600BDA1DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		924D3B021AE9A50600BDA1DD /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		927F61BF196C771E000F43EF /* CloudJumper Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudJumper Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92A5EFD81AD72DC800151661 /* CharWalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharWalk.h; path = Source/Platforms/iOS/CharWalk.h; sourceTree = "<group>"; };
-		92A5EFD91AD72DC800151661 /* CharWalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharWalk.m; path = Source/Platforms/iOS/CharWalk.m; sourceTree = "<group>"; };
-		92A5EFDB1AD72E2800151661 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = Source/Platforms/iOS/Goal.h; sourceTree = "<group>"; };
-		92A5EFDC1AD72E2800151661 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = Source/Platforms/iOS/Goal.m; sourceTree = "<group>"; };
-		92A5EFDE1AD8AB0600151661 /* Cloud1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud1.h; path = Source/Platforms/iOS/Cloud1.h; sourceTree = "<group>"; };
-		92A5EFDF1AD8AB0600151661 /* Cloud1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud1.m; path = Source/Platforms/iOS/Cloud1.m; sourceTree = "<group>"; };
-		92A5EFE11AD8AB1900151661 /* Cloud2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud2.h; path = Source/Platforms/iOS/Cloud2.h; sourceTree = "<group>"; };
-		92A5EFE21AD8AB1900151661 /* Cloud2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud2.m; path = Source/Platforms/iOS/Cloud2.m; sourceTree = "<group>"; };
-		92A5EFE41AD8AB2800151661 /* Cloud3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud3.h; path = Source/Platforms/iOS/Cloud3.h; sourceTree = "<group>"; };
-		92A5EFE51AD8AB2800151661 /* Cloud3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud3.m; path = Source/Platforms/iOS/Cloud3.m; sourceTree = "<group>"; };
-		92A5EFF31ADD8CFC00151661 /* Cloud4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud4.h; path = Source/Platforms/iOS/Cloud4.h; sourceTree = "<group>"; };
-		92A5EFF41ADD8CFC00151661 /* Cloud4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud4.m; path = Source/Platforms/iOS/Cloud4.m; sourceTree = "<group>"; };
-		92A5EFF81ADDA97900151661 /* TopNail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopNail.h; path = Source/Platforms/iOS/TopNail.h; sourceTree = "<group>"; };
-		92A5EFF91ADDA97900151661 /* TopNail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopNail.m; path = Source/Platforms/iOS/TopNail.m; sourceTree = "<group>"; };
-		92A5F0011AE49F7200151661 /* GameDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDataSingleton.h; path = Source/Platforms/iOS/GameDataSingleton.h; sourceTree = "<group>"; };
-		92A5F0021AE49F7200151661 /* GameDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDataSingleton.m; path = Source/Platforms/iOS/GameDataSingleton.m; sourceTree = "<group>"; };
-		92D1C9AE1A9AB0FC003CA9CD /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Platforms/iOS/Gameplay.h; sourceTree = "<group>"; };
-		92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Platforms/iOS/Gameplay.m; sourceTree = "<group>"; };
+		92FD354C1AE9CADA00D20B0F /* CharWalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharWalk.h; path = Source/Platforms/iOS/CharWalk.h; sourceTree = "<group>"; };
+		92FD354D1AE9CADA00D20B0F /* CharWalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharWalk.m; path = Source/Platforms/iOS/CharWalk.m; sourceTree = "<group>"; };
+		92FD354E1AE9CADA00D20B0F /* Cloud1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud1.h; path = Source/Platforms/iOS/Cloud1.h; sourceTree = "<group>"; };
+		92FD354F1AE9CADA00D20B0F /* Cloud1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud1.m; path = Source/Platforms/iOS/Cloud1.m; sourceTree = "<group>"; };
+		92FD35501AE9CADA00D20B0F /* Cloud2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud2.h; path = Source/Platforms/iOS/Cloud2.h; sourceTree = "<group>"; };
+		92FD35511AE9CADA00D20B0F /* Cloud2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud2.m; path = Source/Platforms/iOS/Cloud2.m; sourceTree = "<group>"; };
+		92FD35521AE9CADA00D20B0F /* Cloud3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud3.h; path = Source/Platforms/iOS/Cloud3.h; sourceTree = "<group>"; };
+		92FD35531AE9CADA00D20B0F /* Cloud3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud3.m; path = Source/Platforms/iOS/Cloud3.m; sourceTree = "<group>"; };
+		92FD35541AE9CADA00D20B0F /* Cloud4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cloud4.h; path = Source/Platforms/iOS/Cloud4.h; sourceTree = "<group>"; };
+		92FD35551AE9CADA00D20B0F /* Cloud4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cloud4.m; path = Source/Platforms/iOS/Cloud4.m; sourceTree = "<group>"; };
+		92FD35561AE9CADA00D20B0F /* GameDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDataSingleton.h; path = Source/Platforms/iOS/GameDataSingleton.h; sourceTree = "<group>"; };
+		92FD35571AE9CADA00D20B0F /* GameDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDataSingleton.m; path = Source/Platforms/iOS/GameDataSingleton.m; sourceTree = "<group>"; };
+		92FD35581AE9CADB00D20B0F /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Platforms/iOS/Gameplay.h; sourceTree = "<group>"; };
+		92FD35591AE9CADB00D20B0F /* Gameplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gameplay.m; path = Source/Platforms/iOS/Gameplay.m; sourceTree = "<group>"; };
+		92FD355A1AE9CADB00D20B0F /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = Source/Platforms/iOS/Goal.h; sourceTree = "<group>"; };
+		92FD355B1AE9CADB00D20B0F /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = Source/Platforms/iOS/Goal.m; sourceTree = "<group>"; };
+		92FD355C1AE9CADB00D20B0F /* TopNail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopNail.h; path = Source/Platforms/iOS/TopNail.h; sourceTree = "<group>"; };
+		92FD355D1AE9CADB00D20B0F /* TopNail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopNail.m; path = Source/Platforms/iOS/TopNail.m; sourceTree = "<group>"; };
+		92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		92FD35731AE9CE8B00D20B0F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -287,11 +289,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924D3B031AE9A50600BDA1DD /* FBSDKCoreKit.framework in Frameworks */,
-				924D3B041AE9A50600BDA1DD /* FBSDKShareKit.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
+				92FD35711AE9CD7700D20B0F /* FBSDKCoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
+				92FD35721AE9CD7700D20B0F /* FBSDKShareKit.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
@@ -300,6 +302,7 @@
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
+				92FD35741AE9CE8B00D20B0F /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,24 +367,24 @@
 			children = (
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
-				92D1C9AE1A9AB0FC003CA9CD /* Gameplay.h */,
-				92D1C9AF1A9AB0FC003CA9CD /* Gameplay.m */,
-				92A5EFD81AD72DC800151661 /* CharWalk.h */,
-				92A5EFD91AD72DC800151661 /* CharWalk.m */,
-				92A5EFDB1AD72E2800151661 /* Goal.h */,
-				92A5EFDC1AD72E2800151661 /* Goal.m */,
-				92A5EFDE1AD8AB0600151661 /* Cloud1.h */,
-				92A5EFDF1AD8AB0600151661 /* Cloud1.m */,
-				92A5EFE11AD8AB1900151661 /* Cloud2.h */,
-				92A5EFE21AD8AB1900151661 /* Cloud2.m */,
-				92A5EFE41AD8AB2800151661 /* Cloud3.h */,
-				92A5EFE51AD8AB2800151661 /* Cloud3.m */,
-				92A5EFF31ADD8CFC00151661 /* Cloud4.h */,
-				92A5EFF41ADD8CFC00151661 /* Cloud4.m */,
-				92A5EFF81ADDA97900151661 /* TopNail.h */,
-				92A5EFF91ADDA97900151661 /* TopNail.m */,
-				92A5F0011AE49F7200151661 /* GameDataSingleton.h */,
-				92A5F0021AE49F7200151661 /* GameDataSingleton.m */,
+				92FD354C1AE9CADA00D20B0F /* CharWalk.h */,
+				92FD354D1AE9CADA00D20B0F /* CharWalk.m */,
+				92FD354E1AE9CADA00D20B0F /* Cloud1.h */,
+				92FD354F1AE9CADA00D20B0F /* Cloud1.m */,
+				92FD35501AE9CADA00D20B0F /* Cloud2.h */,
+				92FD35511AE9CADA00D20B0F /* Cloud2.m */,
+				92FD35521AE9CADA00D20B0F /* Cloud3.h */,
+				92FD35531AE9CADA00D20B0F /* Cloud3.m */,
+				92FD35541AE9CADA00D20B0F /* Cloud4.h */,
+				92FD35551AE9CADA00D20B0F /* Cloud4.m */,
+				92FD35561AE9CADA00D20B0F /* GameDataSingleton.h */,
+				92FD35571AE9CADA00D20B0F /* GameDataSingleton.m */,
+				92FD35581AE9CADB00D20B0F /* Gameplay.h */,
+				92FD35591AE9CADB00D20B0F /* Gameplay.m */,
+				92FD355A1AE9CADB00D20B0F /* Goal.h */,
+				92FD355B1AE9CADB00D20B0F /* Goal.m */,
+				92FD355C1AE9CADB00D20B0F /* TopNail.h */,
+				92FD355D1AE9CADB00D20B0F /* TopNail.m */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -462,7 +465,7 @@
 				7A9790FE19E62E40001FFC4D /* libcocos2d.a */,
 				7A97910019E62E40001FFC4D /* libcocos2dAndroid.a */,
 				7A97910419E62E40001FFC4D /* libcocos2d-mac.a */,
-				92D1C9AB1A9AB004003CA9CD /* cocos2dMacFramework.framework */,
+				92FD352E1AE9C9FD00D20B0F /* cocos2dMacFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -541,8 +544,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				924D3B011AE9A50600BDA1DD /* FBSDKCoreKit.framework */,
-				924D3B021AE9A50600BDA1DD /* FBSDKShareKit.framework */,
+				92FD35731AE9CE8B00D20B0F /* Bolts.framework */,
+				92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */,
+				92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
@@ -721,11 +725,11 @@
 			remoteRef = 7A97910319E62E40001FFC4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		92D1C9AB1A9AB004003CA9CD /* cocos2dMacFramework.framework */ = {
+		92FD352E1AE9C9FD00D20B0F /* cocos2dMacFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = cocos2dMacFramework.framework;
-			remoteRef = 92D1C9AA1A9AB004003CA9CD /* PBXContainerItemProxy */;
+			remoteRef = 92FD352D1AE9C9FD00D20B0F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -869,18 +873,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A5EFDD1AD72E2800151661 /* Goal.m in Sources */,
-				92A5EFF51ADD8CFC00151661 /* Cloud4.m in Sources */,
-				92A5EFFA1ADDA97900151661 /* TopNail.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				92A5EFE01AD8AB0600151661 /* Cloud1.m in Sources */,
-				92A5EFE31AD8AB1900151661 /* Cloud2.m in Sources */,
-				92D1C9B01A9AB0FC003CA9CD /* Gameplay.m in Sources */,
+				92FD35641AE9CADB00D20B0F /* Gameplay.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
-				92A5EFDA1AD72DC800151661 /* CharWalk.m in Sources */,
-				92A5F0031AE49F7200151661 /* GameDataSingleton.m in Sources */,
+				92FD35661AE9CADB00D20B0F /* TopNail.m in Sources */,
+				92FD355E1AE9CADB00D20B0F /* CharWalk.m in Sources */,
+				92FD35631AE9CADB00D20B0F /* GameDataSingleton.m in Sources */,
+				92FD355F1AE9CADB00D20B0F /* Cloud1.m in Sources */,
+				92FD35611AE9CADB00D20B0F /* Cloud3.m in Sources */,
+				92FD35601AE9CADB00D20B0F /* Cloud2.m in Sources */,
+				92FD35621AE9CADB00D20B0F /* Cloud4.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
-				92A5EFE61AD8AB2800151661 /* Cloud3.m in Sources */,
+				92FD35651AE9CADB00D20B0F /* Goal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,6 +1172,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/**",
 					/Users/tonyfu/Documents/FacebookSDK,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1179,6 +1184,7 @@
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1192,6 +1198,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "/Users/tonyfu/Documents/FacebookSDK/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1207,6 +1214,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/**",
 					/Users/tonyfu/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1217,6 +1225,7 @@
 					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
 					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Platforms/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1228,6 +1237,7 @@
 				PRODUCT_NAME = CloudJumper;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "/Users/tonyfu/Documents/FacebookSDK/**";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
