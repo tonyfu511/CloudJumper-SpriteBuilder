@@ -203,7 +203,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.44999998807907104</real>
+							<real>0.43433907628059387</real>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -376,8 +376,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -414,7 +412,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.55000001192092896</real>
+							<real>0.54373562335968018</real>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -438,8 +436,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>1.7267869710922241</real>
+							<real>1.3187549114227295</real>
 							<false/>
 							<integer>0</integer>
 						</array>
