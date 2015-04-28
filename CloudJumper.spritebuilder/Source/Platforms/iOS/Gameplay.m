@@ -351,7 +351,6 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (void)shareToFacebook {
-     //UIImage *img = [UIImage imageNamed:@"spacemonkey.png"];
      CCScene *myScene = [[CCDirector sharedDirector] runningScene];
      CCNode *node = [myScene.children objectAtIndex:0];
      UIImage *img = [self screenshotWithStartNode:node];
@@ -359,7 +358,6 @@ static float const MIN_DISTANCE = 20.0f;
      FBSDKSharePhoto *screen = [[FBSDKSharePhoto alloc] init];
      screen.image = img;
      screen.userGenerated = YES;
-     //[screen setImageURL:[NSURL URLWithString:@"http://spacemonkey.kailiangchen.com"]];
      
      FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
      content.photos = @[screen];
