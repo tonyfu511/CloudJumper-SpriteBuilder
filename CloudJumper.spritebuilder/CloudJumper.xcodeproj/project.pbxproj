@@ -72,9 +72,8 @@
 		92FD35641AE9CADB00D20B0F /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD35591AE9CADB00D20B0F /* Gameplay.m */; };
 		92FD35651AE9CADB00D20B0F /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD355B1AE9CADB00D20B0F /* Goal.m */; };
 		92FD35661AE9CADB00D20B0F /* TopNail.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FD355D1AE9CADB00D20B0F /* TopNail.m */; };
-		92FD35711AE9CD7700D20B0F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */; };
-		92FD35721AE9CD7700D20B0F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */; };
-		92FD35741AE9CE8B00D20B0F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35731AE9CE8B00D20B0F /* Bolts.framework */; };
+		92FD35771AEF178500D20B0F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35751AEF178500D20B0F /* FBSDKCoreKit.framework */; };
+		92FD35781AEF178500D20B0F /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FD35761AEF178500D20B0F /* FBSDKShareKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -203,9 +202,8 @@
 		92FD355B1AE9CADB00D20B0F /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = Source/Platforms/iOS/Goal.m; sourceTree = "<group>"; };
 		92FD355C1AE9CADB00D20B0F /* TopNail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopNail.h; path = Source/Platforms/iOS/TopNail.h; sourceTree = "<group>"; };
 		92FD355D1AE9CADB00D20B0F /* TopNail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopNail.m; path = Source/Platforms/iOS/TopNail.m; sourceTree = "<group>"; };
-		92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		92FD35731AE9CE8B00D20B0F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		92FD35751AEF178500D20B0F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		92FD35761AEF178500D20B0F /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -290,10 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
-				92FD35711AE9CD7700D20B0F /* FBSDKCoreKit.framework in Frameworks */,
+				92FD35771AEF178500D20B0F /* FBSDKCoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
-				92FD35721AE9CD7700D20B0F /* FBSDKShareKit.framework in Frameworks */,
+				92FD35781AEF178500D20B0F /* FBSDKShareKit.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
@@ -302,7 +300,6 @@
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
-				92FD35741AE9CE8B00D20B0F /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,9 +541,8 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				92FD35731AE9CE8B00D20B0F /* Bolts.framework */,
-				92FD356F1AE9CD7700D20B0F /* FBSDKCoreKit.framework */,
-				92FD35701AE9CD7700D20B0F /* FBSDKShareKit.framework */,
+				92FD35751AEF178500D20B0F /* FBSDKCoreKit.framework */,
+				92FD35761AEF178500D20B0F /* FBSDKShareKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
@@ -1170,11 +1166,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-					/Users/tonyfu/Documents/FacebookSDK,
-				);
+				FRAMEWORK_SEARCH_PATHS = /Users/tonyfu/Documents/FacebookSDK;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -1212,11 +1204,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-					/Users/tonyfu/Documents/FacebookSDK,
-				);
+				FRAMEWORK_SEARCH_PATHS = /Users/tonyfu/Documents/FacebookSDK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
