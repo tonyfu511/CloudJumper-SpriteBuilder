@@ -351,7 +351,7 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (void)shareToFacebook {
-     CCScene *myScene = [[CCDirector sharedDirector] runningScene];
+     /*CCScene *myScene = [[CCDirector sharedDirector] runningScene];
      CCNode *node = [myScene.children objectAtIndex:0];
      UIImage *img = [self screenshotWithStartNode:node];
      
@@ -366,7 +366,24 @@ static float const MIN_DISTANCE = 20.0f;
      dialog.fromViewController = [CCDirector sharedDirector];
      [dialog setShareContent:content];
      dialog.mode = FBSDKShareDialogModeShareSheet;
-     [dialog show];
+     [dialog show];*/
+    
+    CCScene *scene = [[CCDirector sharedDirector] runningScene];
+    CCNode *node = [scene.children objectAtIndex:0];
+    UIImage *img = [self screenshotWithStartNode:node];
+    
+    FBSDKSharePhoto *screen = [[FBSDKSharePhoto alloc] init];
+    screen.image = img;
+    screen.userGenerated = YES;
+    
+    FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+    content.photos = @[screen];
+    
+    FBSDKShareDialog *dialog = [[FBSDKShareDialog alloc] init];
+    dialog.fromViewController = [CCDirector sharedDirector];
+    [dialog setShareContent:content];
+    dialog.mode = FBSDKShareDialogModeShareSheet;
+    [dialog show];
 }
 
 - (UIImage*)screenshotWithStartNode:(CCNode*)stNode {
