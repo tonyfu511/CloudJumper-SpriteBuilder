@@ -16,8 +16,8 @@
 #import "GameDataSingleton.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
-#import <FBSDKShareKit/FBSDKCoreKit.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
+#import "FBSDKCoreKit/FBSDKCoreKit.h"
+#import "FBSDKShareKit/FBSDKShareKit.h"
 
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
@@ -351,7 +351,7 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (void)shareToFacebook {
-    /*//UIImage *img = [UIImage imageNamed:@"spacemonkey.png"];
+     //UIImage *img = [UIImage imageNamed:@"spacemonkey.png"];
      CCScene *myScene = [[CCDirector sharedDirector] runningScene];
      CCNode *node = [myScene.children objectAtIndex:0];
      UIImage *img = [self screenshotWithStartNode:node];
@@ -368,7 +368,7 @@ static float const MIN_DISTANCE = 20.0f;
      dialog.fromViewController = [CCDirector sharedDirector];
      [dialog setShareContent:content];
      dialog.mode = FBSDKShareDialogModeShareSheet;
-     [dialog show];*/
+     [dialog show];
 }
 
 - (UIImage*)screenshotWithStartNode:(CCNode*)stNode {
