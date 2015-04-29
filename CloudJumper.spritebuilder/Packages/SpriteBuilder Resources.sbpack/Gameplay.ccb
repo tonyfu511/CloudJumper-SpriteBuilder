@@ -2469,7 +2469,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Tap Left or Right to move</string>
+							<string>Tap Left or Right to Move</string>
 							<false/>
 						</array>
 					</dict>
