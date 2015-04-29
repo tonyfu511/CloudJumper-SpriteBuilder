@@ -240,7 +240,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Cloud Ladder</string>
+							<string>Cloud Jumper</string>
 							<false/>
 						</array>
 					</dict>
@@ -376,6 +376,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -704,8 +706,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
