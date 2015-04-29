@@ -43,8 +43,8 @@
 		927AC1DA1AF06AAF00230687 /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1D91AF06AAF00230687 /* iPhone@2x.png */; };
 		927AC1F01AF06BB100230687 /* iPhone-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1EF1AF06BB100230687 /* iPhone-old@2x.png */; };
 		927AC1F41AF06C4200230687 /* iPhone-old.png in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1F31AF06C4200230687 /* iPhone-old.png */; };
-		927AC1F91AF06F5C00230687 /* Yell2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1F71AF06F5C00230687 /* Yell2.wav */; };
-		927AC1FA1AF06F5C00230687 /* Yell1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1F81AF06F5C00230687 /* Yell1.wav */; };
+		927AC1FD1AF070B000230687 /* Yell1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1FB1AF070B000230687 /* Yell1.wav */; };
+		927AC1FE1AF070B000230687 /* Yell2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 927AC1FC1AF070B000230687 /* Yell2.wav */; };
 		927F619E196C771E000F43EF /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		927F61A5196C771E000F43EF /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
 		927F61A9196C771E000F43EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
@@ -179,8 +179,8 @@
 		927AC1D91AF06AAF00230687 /* iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone@2x.png"; sourceTree = "<group>"; };
 		927AC1EF1AF06BB100230687 /* iPhone-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone-old@2x.png"; sourceTree = "<group>"; };
 		927AC1F31AF06C4200230687 /* iPhone-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone-old.png"; sourceTree = "<group>"; };
-		927AC1F71AF06F5C00230687 /* Yell2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yell2.wav; sourceTree = "<group>"; };
-		927AC1F81AF06F5C00230687 /* Yell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Yell1.wav; sourceTree = "<group>"; };
+		927AC1FB1AF070B000230687 /* Yell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Yell1.wav; path = Source/Resources/Sounds/Yell1.wav; sourceTree = "<group>"; };
+		927AC1FC1AF070B000230687 /* Yell2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Yell2.wav; path = Source/Resources/Sounds/Yell2.wav; sourceTree = "<group>"; };
 		927F61BF196C771E000F43EF /* CloudJumper Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudJumper Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AC85FD1AEFE9E600D75480 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		92AC85FE1AEFE9E600D75480 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -481,8 +481,8 @@
 		927AC1F61AF06F4900230687 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				927AC1F71AF06F5C00230687 /* Yell2.wav */,
-				927AC1F81AF06F5C00230687 /* Yell1.wav */,
+				927AC1FB1AF070B000230687 /* Yell1.wav */,
+				927AC1FC1AF070B000230687 /* Yell2.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -785,11 +785,11 @@
 				927AC1F01AF06BB100230687 /* iPhone-old@2x.png in Resources */,
 				927AC1DA1AF06AAF00230687 /* iPhone@2x.png in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
+				927AC1FD1AF070B000230687 /* Yell1.wav in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
-				927AC1FA1AF06F5C00230687 /* Yell1.wav in Resources */,
+				927AC1FE1AF070B000230687 /* Yell2.wav in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
-				927AC1F91AF06F5C00230687 /* Yell2.wav in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
