@@ -19,6 +19,8 @@
 #import "FBSDKCoreKit/FBSDKCoreKit.h"
 #import "FBSDKShareKit/FBSDKShareKit.h"
 
+int playCount = 0;
+
 @implementation Gameplay {
     CCPhysicsNode *_physicsNode;
     
@@ -36,6 +38,7 @@
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_finalScoreLabel;
     CCLabelTTF *_topScoreLabel;
+    CCLabelTTF *_tipLabel;
     CCButton *_restartButton;
     CCButton *_fbButton;
     
@@ -54,6 +57,7 @@
     CGFloat screenWidth;
     BOOL _gameOver;
     
+    float timeSinceStart;
     float timeSinceObstacle;
     double time;
     
@@ -80,11 +84,17 @@ static float const MIN_DISTANCE = 20.0f;
     [_physicsNode addChild:_character];
     faceRight = YES;
     
+    timeSinceStart = 0.0f;
     timeSinceObstacle = 0.0f;
     moveHeight = 50.0f;
     firstCloud = TRUE;
     points = 0;
     heartNum = 3;
+    playCount++;
+    
+    if (playCount == 1) {
+        _tipLabel.visible = TRUE;
+    }
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     screenHeight = screenRect.size.height;
@@ -178,6 +188,13 @@ static float const MIN_DISTANCE = 20.0f;
         if (timeSinceObstacle > 1.2f) {
             [self addCloud];
             timeSinceObstacle = 0.0f;
+        }
+        
+        if (_tipLabel.visible == TRUE) {
+            timeSinceStart += delta;
+            if (timeSinceStart > 2.0f) {
+                _tipLabel.visible = FALSE;
+            }
         }
     }
 }
@@ -331,6 +348,7 @@ static float const MIN_DISTANCE = 20.0f;
         _topScoreLabel.visible = TRUE;
         _restartButton.visible = TRUE;
         _fbButton.visible = TRUE;
+        _tipLabel.visible = FALSE;
         
         for (CCNode *cloud in _clouds) {
             [self removeCloud:cloud];
