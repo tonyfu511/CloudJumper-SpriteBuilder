@@ -59,6 +59,7 @@ int playCount = 0;
     
     float timeSinceStart;
     float timeSinceObstacle;
+    float timeIntervalForCloud;
     double time;
     
     GameDataSingleton *gameData;
@@ -86,6 +87,7 @@ static float const MIN_DISTANCE = 20.0f;
     
     timeSinceStart = 0.0f;
     timeSinceObstacle = 0.0f;
+    timeIntervalForCloud = 1.2f;
     moveHeight = 50.0f;
     firstCloud = TRUE;
     points = 0;
@@ -151,6 +153,7 @@ static float const MIN_DISTANCE = 20.0f;
         if (time >= 15.0) {
             moveHeight += 10;
             time = 0.0;
+            timeIntervalForCloud -= 0.1;
         }
         
         _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y + (moveHeight * delta));
@@ -185,7 +188,7 @@ static float const MIN_DISTANCE = 20.0f;
         }
         
         timeSinceObstacle += delta;
-        if (timeSinceObstacle > 1.2f) {
+        if (timeSinceObstacle > timeIntervalForCloud) {
             [self addCloud];
             timeSinceObstacle = 0.0f;
         }
