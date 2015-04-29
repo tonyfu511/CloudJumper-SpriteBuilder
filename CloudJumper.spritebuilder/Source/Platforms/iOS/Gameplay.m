@@ -311,15 +311,16 @@ static float const MIN_DISTANCE = 20.0f;
         if (heartNum == 3) {
             _heart1.visible = FALSE;
             heartNum--;
+            [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 2) {
             _heart2.visible = FALSE;
             heartNum--;
+            [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 1) {
             _heart3.visible = FALSE;
             [self gameOver];
         }
         lastCollision = cloud4;
-        [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
     }
     
     return TRUE;
