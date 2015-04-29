@@ -319,6 +319,7 @@ static float const MIN_DISTANCE = 20.0f;
             [self gameOver];
         }
         lastCollision = cloud4;
+        [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
     }
     
     return TRUE;
@@ -353,6 +354,8 @@ static float const MIN_DISTANCE = 20.0f;
         for (CCNode *cloud in _clouds) {
             [self removeCloud:cloud];
         }
+        
+        [[OALSimpleAudio sharedInstance] playBg:@"Yell2.wav"];
     }
 }
 
