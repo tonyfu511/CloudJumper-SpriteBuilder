@@ -151,9 +151,9 @@ static float const MIN_DISTANCE = 20.0f;
     if (!_gameOver) {
         time += delta;
         if (time >= 15.0) {
-            moveHeight += 10;
+            moveHeight += 6;
             time = 0.0;
-            timeIntervalForCloud -= 0.1;
+            timeIntervalForCloud -= 0.05;
         }
         
         _physicsNode.position = ccp(_physicsNode.position.x, _physicsNode.position.y + (moveHeight * delta));
