@@ -34,6 +34,10 @@ int playCount = 0;
     CCSprite *_heart2;
     CCSprite *_heart3;
     
+    BOOL isHeart1Exist;
+    BOOL isHeart2Exist;
+    BOOL isHeart3Exist;
+    
     CCLabelTTF *_gameOverLabel;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_finalScoreLabel;
@@ -41,6 +45,8 @@ int playCount = 0;
     CCLabelTTF *_tipLabel;
     CCButton *_restartButton;
     CCButton *_fbButton;
+    
+    BOOL isTipExist;
     
     CCNode *lastCollision;
     
@@ -93,9 +99,13 @@ static float const MIN_DISTANCE = 20.0f;
     points = 0;
     heartNum = 3;
     playCount++;
+    isHeart1Exist = TRUE;
+    isHeart2Exist = TRUE;
+    isHeart3Exist = TRUE;
     
     if (playCount == 1) {
         _tipLabel.visible = TRUE;
+        isTipExist = TRUE;
     }
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -193,10 +203,13 @@ static float const MIN_DISTANCE = 20.0f;
             timeSinceObstacle = 0.0f;
         }
         
-        if (_tipLabel.visible == TRUE) {
+        if (isTipExist) {
             timeSinceStart += delta;
             if (timeSinceStart > 2.0f) {
-                _tipLabel.visible = FALSE;
+                CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+                CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+                [_tipLabel runAction:sequence];
+                isTipExist = FALSE;
             }
         }
     }
@@ -315,13 +328,18 @@ static float const MIN_DISTANCE = 20.0f;
         CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
         if (heartNum == 3) {
             [_heart1 runAction:sequence];
+            isHeart1Exist = FALSE;
             heartNum--;
             [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 2) {
             [_heart2 runAction:sequence];
+            isHeart2Exist = FALSE;
             heartNum--;
             [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 1) {
+            [_heart3 runAction:sequence];
+            isHeart3Exist = FALSE;
+            heartNum--;
             [self gameOver];
         }
         lastCollision = cloud4;
@@ -343,20 +361,65 @@ static float const MIN_DISTANCE = 20.0f;
         _finalScoreLabel.string = [NSString stringWithFormat:@"Final Score: %d", points];
         _topScoreLabel.string = [NSString stringWithFormat:@"Top Score: %d", (int)topPoints];
         
-        CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
-        CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
-        [_heart1 runAction:sequence];
-        [_heart2 runAction:sequence];
-        [_heart3 runAction:sequence];
+        if (isHeart1Exist) {
+            CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+            CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+            [_heart1 runAction:sequence];
+            isHeart1Exist = FALSE;
+        }
+        if (isHeart2Exist) {
+            CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+            CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+            [_heart2 runAction:sequence];
+            isHeart2Exist = FALSE;
+        }
+        if (isHeart3Exist) {
+            CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+            CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+            [_heart3 runAction:sequence];
+            isHeart3Exist = FALSE;
+        }
         
-        _topnail.visible = FALSE;
-        _scoreLabel.visible = FALSE;
+        CCActionFadeOut *fadeOutTopNail = [CCActionFadeOut actionWithDuration:1];
+        CCActionSequence *sequenceTopNail = [CCActionSequence actions:fadeOutTopNail, nil];
+        [_topnail runAction:sequenceTopNail];
+        
+        CCActionFadeOut *fadeOutScoreLabel = [CCActionFadeOut actionWithDuration:1];
+        CCActionSequence *sequenceScoreLabel = [CCActionSequence actions:fadeOutScoreLabel, nil];
+        [_scoreLabel runAction:sequenceScoreLabel];
+        
+        CCActionFadeIn *fadeInGameOverLabel = [CCActionFadeIn actionWithDuration:2];
+        CCActionSequence *sequenceGameOverLabel = [CCActionSequence actions:fadeInGameOverLabel, nil];
+        [_gameOverLabel runAction:sequenceGameOverLabel];
         _gameOverLabel.visible = TRUE;
+        
+        CCActionFadeIn *fadeInFinalScoreLabel = [CCActionFadeIn actionWithDuration:2];
+        CCActionSequence *sequenceFinalScoreLabel = [CCActionSequence actions:fadeInFinalScoreLabel, nil];
+        [_finalScoreLabel runAction:sequenceFinalScoreLabel];
         _finalScoreLabel.visible = TRUE;
+        
+        CCActionFadeIn *fadeInTopScoreLabel = [CCActionFadeIn actionWithDuration:2];
+        CCActionSequence *sequenceTopScoreLabel = [CCActionSequence actions:fadeInTopScoreLabel, nil];
+        [_topScoreLabel runAction:sequenceTopScoreLabel];
         _topScoreLabel.visible = TRUE;
+        
+        _restartButton.cascadeOpacityEnabled= TRUE;
+        CCActionFadeIn *fadeInRestartButton = [CCActionFadeIn actionWithDuration:2];
+        CCActionSequence *sequenceRestartButton = [CCActionSequence actions:fadeInRestartButton, nil];
+        [_restartButton runAction:sequenceRestartButton];
         _restartButton.visible = TRUE;
+        
+        _fbButton.cascadeOpacityEnabled = TRUE;
+        CCActionFadeIn *fadeInFbButton = [CCActionFadeIn actionWithDuration:2];
+        CCActionSequence *sequenceFbButton = [CCActionSequence actions:fadeInFbButton, nil];
+        [_fbButton runAction:sequenceFbButton];
         _fbButton.visible = TRUE;
-        _tipLabel.visible = FALSE;
+        
+        if (isTipExist) {
+            CCActionFadeOut *fadeOutTipLabel = [CCActionFadeOut actionWithDuration:1];
+            CCActionSequence *sequenceTipLabel = [CCActionSequence actions:fadeOutTipLabel, nil];
+            [_tipLabel runAction:sequenceTipLabel];
+        }
         
         for (CCNode *cloud in _clouds) {
             [self removeCloud:cloud];
