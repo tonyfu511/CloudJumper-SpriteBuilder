@@ -7,6 +7,7 @@
 //
 
 #import "CharWalk.h"
+#import "Gameplay.h"
 
 @implementation CharWalk
 
@@ -15,6 +16,7 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenHeight = screenRect.size.height;
     self.position = ccp(155, screenHeight - 180);
+    self.zOrder = DrawingOrderHero;
     self.physicsBody.collisionType = @"character";
 }
 

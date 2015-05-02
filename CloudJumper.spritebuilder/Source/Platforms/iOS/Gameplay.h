@@ -8,6 +8,13 @@
 
 #import <CCNode.h>
 
+typedef NS_ENUM(NSInteger, DrawingOrder) {
+    DrawingOrderClouds,
+    DrawingOrderBlood,
+    DrawingOrderTopNail,
+    DrawingOrderHero
+};
+
 @interface Gameplay : CCNode <CCPhysicsCollisionDelegate>
 
 @end

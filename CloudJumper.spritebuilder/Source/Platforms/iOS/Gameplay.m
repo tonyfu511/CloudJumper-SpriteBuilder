@@ -13,6 +13,8 @@
 #import "Cloud3.h"
 #import "Cloud4.h"
 #import "TopNail.h"
+#import "Blood1.h"
+#import "Blood2.h"
 #import "GameDataSingleton.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
@@ -25,6 +27,7 @@ int playCount = 0;
     CCPhysicsNode *_physicsNode;
     
     NSMutableArray *_clouds;
+    NSMutableArray *_bloods;
     
     CCNode *_bg1;
     CCNode *_bg2;
@@ -82,6 +85,7 @@ static float const MIN_DISTANCE = 20.0f;
     _bgs = @[_bg1, _bg2];
     
     _clouds = [NSMutableArray array];
+    _bloods = [NSMutableArray array];
     
     [self initialize];
 }
@@ -102,6 +106,8 @@ static float const MIN_DISTANCE = 20.0f;
     isHeart1Exist = TRUE;
     isHeart2Exist = TRUE;
     isHeart3Exist = TRUE;
+    
+    _topnail.zOrder = DrawingOrderTopNail;
     
     if (playCount == 1) {
         _tipLabel.visible = TRUE;
@@ -260,7 +266,7 @@ static float const MIN_DISTANCE = 20.0f;
             }
             
             if ([self isValidCloud:node]) {
-                [_physicsNode addChild:node];
+                [_physicsNode addChild:node z:DrawingOrderClouds];
                 [_clouds addObject:node];
                 break;
             }
@@ -310,9 +316,12 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character topnail:(CCNode *)topnail {
+    Blood2 *blood = (Blood2 *)[CCBReader load:@"Blood2"];
+    blood.position = CGPointMake(_character.position.x + 10, _character.position.y);
+    [_physicsNode addChild:blood];
+    [_bloods addObject:blood];
+    
     [self gameOver];
-    points++;
-    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }
 
@@ -324,6 +333,11 @@ static float const MIN_DISTANCE = 20.0f;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud4:(CCNode *)cloud4 {
     if (lastCollision != cloud4) {
+        Blood1 *blood = (Blood1 *)[CCBReader load:@"Blood1"];
+        blood.position = CGPointMake(_character.position.x + 10, _character.position.y + 10);
+        [_physicsNode addChild:blood];
+        [_bloods addObject:blood];
+        
         CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
         CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
         if (heartNum == 3) {
@@ -425,13 +439,22 @@ static float const MIN_DISTANCE = 20.0f;
             [self removeCloud:cloud];
         }
         
+        for (CCNode *blood in _bloods) {
+            CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+            CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+            [blood runAction:sequence];
+        }
+        
         [[OALSimpleAudio sharedInstance] playBg:@"Yell2.wav"];
     }
 }
 
 - (void)restart {
+    CCActionScaleTo *scale = [CCActionScaleTo actionWithDuration:1 scale:1.5f];
+    [_restartButton runAction:scale];
     CCTransition *transition = [CCTransition transitionCrossFadeWithDuration:1.5f];
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"] withTransition:transition];
+    [[OALSimpleAudio sharedInstance] playBg:@"click_button.wav"];
 }
 
 - (void)removeCloud:(CCNode *)cloud {
@@ -443,6 +466,8 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (void)shareToFacebook {
+    [[OALSimpleAudio sharedInstance] playBg:@"click_button.wav"];
+    
     CCScene *scene = [[CCDirector sharedDirector] runningScene];
     CCNode *node = [scene.children objectAtIndex:0];
     UIImage *img = [self screenshotWithStartNode:node];

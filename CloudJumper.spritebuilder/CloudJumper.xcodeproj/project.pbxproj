@@ -60,6 +60,9 @@
 		927F61B8196C771E000F43EF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896B180762440076A88C /* Default-568h@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
+		9286DDC41AF56F1A0061425D /* click_button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9286DDC31AF56F1A0061425D /* click_button.wav */; };
+		9286DDC71AF57AFE0061425D /* Blood1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286DDC61AF57AFE0061425D /* Blood1.m */; };
+		9286DDCA1AF580350061425D /* Blood2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286DDC91AF580350061425D /* Blood2.m */; };
 		92AC85FF1AEFE9E600D75480 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AC85FD1AEFE9E600D75480 /* FBSDKCoreKit.framework */; };
 		92AC86001AEFE9E600D75480 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AC85FE1AEFE9E600D75480 /* FBSDKShareKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -182,6 +185,11 @@
 		927AC1FB1AF070B000230687 /* Yell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Yell1.wav; path = Source/Resources/Sounds/Yell1.wav; sourceTree = "<group>"; };
 		927AC1FC1AF070B000230687 /* Yell2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Yell2.wav; path = Source/Resources/Sounds/Yell2.wav; sourceTree = "<group>"; };
 		927F61BF196C771E000F43EF /* CloudJumper Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudJumper Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9286DDC31AF56F1A0061425D /* click_button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click_button.wav; path = Source/Resources/Sounds/click_button.wav; sourceTree = "<group>"; };
+		9286DDC51AF57AFE0061425D /* Blood1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blood1.h; path = Source/Platforms/iOS/Blood1.h; sourceTree = "<group>"; };
+		9286DDC61AF57AFE0061425D /* Blood1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blood1.m; path = Source/Platforms/iOS/Blood1.m; sourceTree = "<group>"; };
+		9286DDC81AF580350061425D /* Blood2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blood2.h; path = Source/Platforms/iOS/Blood2.h; sourceTree = "<group>"; };
+		9286DDC91AF580350061425D /* Blood2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Blood2.m; path = Source/Platforms/iOS/Blood2.m; sourceTree = "<group>"; };
 		92AC85FD1AEFE9E600D75480 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		92AC85FE1AEFE9E600D75480 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -376,6 +384,10 @@
 				EAE7F0231AEFE13F00ED247B /* Goal.m */,
 				EAE7F0241AEFE13F00ED247B /* TopNail.h */,
 				EAE7F0251AEFE13F00ED247B /* TopNail.m */,
+				9286DDC51AF57AFE0061425D /* Blood1.h */,
+				9286DDC61AF57AFE0061425D /* Blood1.m */,
+				9286DDC81AF580350061425D /* Blood2.h */,
+				9286DDC91AF580350061425D /* Blood2.m */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -481,6 +493,7 @@
 		927AC1F61AF06F4900230687 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				9286DDC31AF56F1A0061425D /* click_button.wav */,
 				927AC1FB1AF070B000230687 /* Yell1.wav */,
 				927AC1FC1AF070B000230687 /* Yell2.wav */,
 			);
@@ -789,6 +802,7 @@
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				927AC1FE1AF070B000230687 /* Yell2.wav in Resources */,
+				9286DDC41AF56F1A0061425D /* click_button.wav in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
@@ -870,6 +884,7 @@
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				EAE7F02E1AEFE13F00ED247B /* TopNail.m in Sources */,
 				EAE7F0261AEFE13F00ED247B /* CharWalk.m in Sources */,
+				9286DDC71AF57AFE0061425D /* Blood1.m in Sources */,
 				EAE7F02B1AEFE13F00ED247B /* GameDataSingleton.m in Sources */,
 				EAE7F0271AEFE13F00ED247B /* Cloud1.m in Sources */,
 				EAE7F0291AEFE13F00ED247B /* Cloud3.m in Sources */,
@@ -877,6 +892,7 @@
 				EAE7F02A1AEFE13F00ED247B /* Cloud4.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				EAE7F02D1AEFE13F00ED247B /* Goal.m in Sources */,
+				9286DDCA1AF580350061425D /* Blood2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
