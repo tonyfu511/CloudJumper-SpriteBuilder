@@ -311,16 +311,17 @@ static float const MIN_DISTANCE = 20.0f;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair character:(CCNode *)character cloud4:(CCNode *)cloud4 {
     if (lastCollision != cloud4) {
+        CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+        CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
         if (heartNum == 3) {
-            _heart1.visible = FALSE;
+            [_heart1 runAction:sequence];
             heartNum--;
             [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 2) {
-            _heart2.visible = FALSE;
+            [_heart2 runAction:sequence];
             heartNum--;
             [[OALSimpleAudio sharedInstance] playBg:@"Yell1.wav"];
         } else if (heartNum == 1) {
-            _heart3.visible = FALSE;
             [self gameOver];
         }
         lastCollision = cloud4;
@@ -342,9 +343,11 @@ static float const MIN_DISTANCE = 20.0f;
         _finalScoreLabel.string = [NSString stringWithFormat:@"Final Score: %d", points];
         _topScoreLabel.string = [NSString stringWithFormat:@"Top Score: %d", (int)topPoints];
         
-        _heart1.visible = FALSE;
-        _heart2.visible = FALSE;
-        _heart3.visible = FALSE;
+        CCActionFadeOut *fadeOut = [CCActionFadeOut actionWithDuration:1];
+        CCActionSequence *sequence = [CCActionSequence actions:fadeOut, nil];
+        [_heart1 runAction:sequence];
+        [_heart2 runAction:sequence];
+        [_heart3 runAction:sequence];
         
         _topnail.visible = FALSE;
         _scoreLabel.visible = FALSE;
@@ -364,7 +367,8 @@ static float const MIN_DISTANCE = 20.0f;
 }
 
 - (void)restart {
-    [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
+    CCTransition *transition = [CCTransition transitionCrossFadeWithDuration:1.5f];
+    [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"] withTransition:transition];
 }
 
 - (void)removeCloud:(CCNode *)cloud {
